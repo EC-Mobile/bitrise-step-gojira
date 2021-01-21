@@ -23,8 +23,12 @@ envman add --key EXAMPLE_STEP_OUTPUT --value 'the value you want to share'
 
 GOJIRA_VERSION="0.2.1"
 
+export GOJIRA_BASEURL=${jira_baseurl}
+export GOJIRA_USERNAME=${jira_username}
+export GOJIRA_PASSWORD=${jira_password}
+
 curl -LO https://github.com/junkpiano/gojira/releases/download/${GOJIRA_VERSION}/gojira-darwin-amd64.zip
 unzip gojira-darwin-amd64.zip
 cd gojira-darwin-amd64
-./gojira transition --jql ${example_step_input1} --action ${example_step_input2}
-./gojira assignee --jql ${example_step_input1} --reporter
+./gojira transition --jql ${jira_jql} --action ${jira_transition_id}
+./gojira assignee --jql ${jira_jql} --reporter

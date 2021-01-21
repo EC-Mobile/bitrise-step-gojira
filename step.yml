@@ -33,8 +33,7 @@ host_os_tags:
 #   - ios
 #   - macos
 #   - android
-#   - xamarin
-#   - react-native
+#   - xamarin react-native
 #   - cordova
 #   - ionic
 
@@ -80,3 +79,12 @@ inputs:
       summary: Jira Password
       is_sensitive: true
       is_required: true
+  - jira_jql:
+    opts:
+      title: "JQL"
+      summary: JQL to query issues
+      is_required: true
+  - jira_transition_id:
+    opts:
+      title: "Transition ID"
+      summary: Transition ID where the issues are transitioned
