@@ -13,9 +13,9 @@ summary: |
   Jira ticket management
 description: |
   Automate Jira ticket management
-website: https://github.com/junkpiano/bitrise-step-gojira
-source_code_url: https://github.com/junkpiano/bitrise-step-gojira
-support_url: https://github.com/junkpiano/bitrise-step-gojira/issues
+website: https://github.com/EC-Mobile/bitrise-step-gojira
+source_code_url: https://github.com/EC-Mobile/bitrise-step-gojira
+support_url: https://github.com/EC-Mobile/bitrise-step-gojira/issues
 host_os_tags:
   - osx-10.10
   - ubuntu-16.04
