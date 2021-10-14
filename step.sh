@@ -27,8 +27,10 @@ export GOJIRA_BASEURL=${jira_baseurl}
 export GOJIRA_USERNAME=${jira_username}
 export GOJIRA_PASSWORD=${jira_password}
 
-curl -LO https://github.com/junkpiano/gojira/releases/download/${GOJIRA_VERSION}/gojira-darwin-amd64.zip
-unzip gojira-darwin-amd64.zip
-cd gojira-darwin-amd64
-./gojira transition --jql "${jira_jql}" --action ${jira_transition_id}
-./gojira assignee --jql "${jira_jql}" --reporter
+KERNEL_NAME=$(uname | awk '{print tolower($0)}')
+
+curl -LO https://github.com/junkpiano/gojira/releases/download/${GOJIRA_VERSION}/gojira-${KERNEL_NAME}-amd64.zip
+unzip gojira-${KERNEL_NAME}-amd64.zip
+cd gojira-${KERNEL_NAME}-amd64
+
+echo "${content}" | bash

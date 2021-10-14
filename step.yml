@@ -79,12 +79,22 @@ inputs:
       summary: Jira Password
       is_sensitive: true
       is_required: true
-  - jira_jql:
+  - content: |-
+      #!/usr/bin/env bash
+
+      # write your script here
+      echo "Hello World!"
+      # or run a script from your repository, like:
+      # bash ./path/to/script.sh
+      # not just bash, e.g.:
+      # ruby ./path/to/script.rb
+      # ./gojira transition --jql "jql" --action transition_id
+      # ./gojira assignee --jql "jql" --reporter
     opts:
-      title: "JQL"
-      summary: JQL to query issues
+      description: |
+        Type your script here.
+        **Make sure that it returns a non zero exit code in case of an error!**
+        The step will only fail if your script returns with a non zero exit code!
+      is_expand: false
       is_required: true
-  - jira_transition_id:
-    opts:
-      title: "Transition ID"
-      summary: Transition ID where the issues are transitioned
+      title: Script content
