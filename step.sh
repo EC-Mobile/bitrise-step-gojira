@@ -21,7 +21,7 @@ envman add --key EXAMPLE_STEP_OUTPUT --value 'the value you want to share'
 #  with a 0 exit code `bitrise` will register your Step as "successful".
 # Any non zero exit code will be registered as "failed" by `bitrise`.
 
-GOJIRA_VERSION="0.2.1"
+GOJIRA_VERSION="0.2.2"
 
 export GOJIRA_BASEURL=${jira_baseurl}
 export GOJIRA_USERNAME=${jira_username}
@@ -29,8 +29,14 @@ export GOJIRA_PASSWORD=${jira_password}
 
 KERNEL_NAME=$(uname | awk '{print tolower($0)}')
 
-curl -LO https://github.com/junkpiano/gojira/releases/download/${GOJIRA_VERSION}/gojira-${KERNEL_NAME}-amd64.zip
-unzip gojira-${KERNEL_NAME}-amd64.zip
-cd gojira-${KERNEL_NAME}-amd64
+ARCH_NAME="amd64"
+
+if [[ $(uname -m) == 'arm64' ]]; then
+  ARCH_NAME="arm64"
+fi
+
+curl -LO https://github.com/junkpiano/gojira/releases/download/${GOJIRA_VERSION}/gojira-${KERNEL_NAME}-${ARCH_NAME}.zip
+unzip gojira-${KERNEL_NAME}-${ARCH_NAME}.zip
+cd gojira-${KERNEL_NAME}-${ARCH_NAME}
 
 echo "${content}" | bash
