@@ -21,6 +21,7 @@ And add this step as following,
   inputs:
   - jira_baseurl: "$GOJIRA_BASEURL"
   - jira_username: "$GOJIRA_USERNAME"
+  - jira_password: "$GOJIRA_PASSWORD"
   - content: |-
     #!/usr/bin/env bash
 
@@ -32,7 +33,6 @@ And add this step as following,
     # ruby ./path/to/script.rb
     # ./gojira transition --jql "jql" --action transition_id
     # ./gojira assignee --jql "jql" --reporter
-   - jira_password: "$GOJIRA_PASSWORD"
 ```
 
 On workflow console, you can edit script content. You don't need to write whole script in yaml.
