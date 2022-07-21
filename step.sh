@@ -28,9 +28,18 @@ export GOJIRA_USERNAME=${jira_username}
 export GOJIRA_PASSWORD=${jira_password}
 
 KERNEL_NAME=$(uname | awk '{print tolower($0)}')
+PACKAGE_DIRNAME=gojira-${KERNEL_NAME}-amd64
 
-curl -LO https://github.com/junkpiano/gojira/releases/download/${GOJIRA_VERSION}/gojira-${KERNEL_NAME}-amd64.zip
-unzip gojira-${KERNEL_NAME}-amd64.zip
-cd gojira-${KERNEL_NAME}-amd64
+curl -LO https://github.com/junkpiano/gojira/releases/download/${GOJIRA_VERSION}/${PACKAGE_DIRNAME}.zip
+unzip -o ${PACKAGE_DIRNAME}.zip
+
+# Install gojira to system
+cp ${PWD}/gojira /usr/local/bin/
+
+# Gojira localtion
+# - curretdir/gojira
+# - /usr/local/bin/gojira
+# You can access gojira 
+# ./gojira or gojira(system-wide)
 
 echo "${content}" | bash

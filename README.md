@@ -29,5 +29,12 @@ And add this step as following,
     # ./gojira assignee --jql "jql" --reporter
 ```
 
-On workflow console, you can edit script content. You don't need to write whole script in yaml.
-Bitrise transfers dashboard content to yaml automatically.
+You can also input information on bitrise workflow console.
+
+### gojira command locations
+
+- `${PWD}/gojira` (current directory)
+- `/usr/local/bin/gojira` (system wide)
+
+You can access gojira in both ways,
+`./gojira` or `gojira`.
