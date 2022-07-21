@@ -21,7 +21,7 @@ envman add --key EXAMPLE_STEP_OUTPUT --value 'the value you want to share'
 #  with a 0 exit code `bitrise` will register your Step as "successful".
 # Any non zero exit code will be registered as "failed" by `bitrise`.
 
-GOJIRA_VERSION="0.2.1"
+GOJIRA_VERSION="0.2.4"
 
 export GOJIRA_BASEURL=${jira_baseurl}
 export GOJIRA_USERNAME=${jira_username}
