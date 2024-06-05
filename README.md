@@ -16,7 +16,7 @@ Gojira reads these values.
 And add this step as following,
 
 ```yaml
-- git::https://github.com/EC-Mobile/bitrise-step-gojira.git@1.1.0:
+- git::https://github.com/EC-Mobile/bitrise-step-gojira.git@1.1.1:
   title: JIRA automation
   inputs:
   - jira_baseurl: "$GOJIRA_BASEURL"
